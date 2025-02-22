@@ -1,6 +1,7 @@
-import antfu from '@antfu/eslint-config'
+import { solvro } from "@solvro/config/eslint";
 
-export default antfu({
-  formatters: true,
-  react: true,
-})
+export default solvro({
+  rules: {
+    "@typescript-eslint/strict-boolean-expressions": "off",
+  },
+});
