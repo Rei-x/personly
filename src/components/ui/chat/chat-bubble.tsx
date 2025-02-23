@@ -1,3 +1,4 @@
+/* eslint-disable react/function-component-definition */
 import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 import * as React from "react";
@@ -5,7 +6,7 @@ import * as React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
-import MessageLoading from "./message-loading";
+import { MessageLoading } from "./message-loading";
 
 // ChatBubble
 const chatBubbleVariant = cva("relative flex max-w-[60%] items-end gap-2", {

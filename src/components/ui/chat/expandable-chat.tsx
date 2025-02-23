@@ -6,6 +6,8 @@ import React, { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+/* eslint-disable react/function-component-definition */
+
 export type ChatPosition = "bottom-right" | "bottom-left";
 export type ChatSize = "sm" | "md" | "lg" | "xl" | "full";
 
@@ -31,6 +33,39 @@ const chatConfig = {
       "pointer-events-none opacity-0 invisible scale-100 sm:translate-y-5",
   },
 };
+
+interface ExpandableChatToggleProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  icon?: React.ReactNode;
+  isOpen: boolean;
+  toggleChat: () => void;
+}
+
+const ExpandableChatToggle: React.FC<ExpandableChatToggleProps> = ({
+  className,
+  icon,
+  isOpen,
+  toggleChat,
+  ...props
+}) => (
+  <Button
+    variant="default"
+    onClick={toggleChat}
+    className={cn(
+      "flex h-14 w-14 items-center justify-center rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-black/30",
+      className,
+    )}
+    {...props}
+  >
+    {isOpen ? (
+      <X className="size-6" />
+    ) : (
+      (icon ?? <MessageCircle className="size-6" />)
+    )}
+  </Button>
+);
+
+ExpandableChatToggle.displayName = "ExpandableChatToggle";
 
 interface ExpandableChatProps extends React.HTMLAttributes<HTMLDivElement> {
   position?: ChatPosition;
@@ -114,39 +149,6 @@ const ExpandableChatFooter: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
 }) => <div className={cn("border-t p-4", className)} {...props} />;
 
 ExpandableChatFooter.displayName = "ExpandableChatFooter";
-
-interface ExpandableChatToggleProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  icon?: React.ReactNode;
-  isOpen: boolean;
-  toggleChat: () => void;
-}
-
-const ExpandableChatToggle: React.FC<ExpandableChatToggleProps> = ({
-  className,
-  icon,
-  isOpen,
-  toggleChat,
-  ...props
-}) => (
-  <Button
-    variant="default"
-    onClick={toggleChat}
-    className={cn(
-      "flex h-14 w-14 items-center justify-center rounded-full shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-black/30",
-      className,
-    )}
-    {...props}
-  >
-    {isOpen ? (
-      <X className="size-6" />
-    ) : (
-      icon || <MessageCircle className="size-6" />
-    )}
-  </Button>
-);
-
-ExpandableChatToggle.displayName = "ExpandableChatToggle";
 
 export {
   ExpandableChat,

@@ -213,6 +213,7 @@ export function getArrowByType(
 export function convert12HourTo24Hour(hour: number, period: Period) {
   if (period === "PM") {
     return hour <= 11 ? hour + 12 : hour;
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   } else if (period === "AM") {
     if (hour === 12) {
       return 0;

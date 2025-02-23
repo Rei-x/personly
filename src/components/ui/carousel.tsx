@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 "use client";
 
 import type { UseEmblaCarouselType } from "embla-carousel-react";
@@ -8,10 +7,6 @@ import * as React from "react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-/* eslint-disable @typescript-eslint/no-unnecessary-condition */
-
-/* eslint-disable @typescript-eslint/no-unnecessary-condition */
 
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 

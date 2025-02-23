@@ -40,6 +40,7 @@ export function Note({
         description: debouncedNote,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedTitle, debouncedNote, personId, id]);
 
   return (

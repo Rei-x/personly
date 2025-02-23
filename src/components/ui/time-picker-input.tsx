@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 import React from "react";
 
 import { Input } from "@/components/ui/input";
@@ -83,19 +84,19 @@ const TimePickerInput = React.forwardRef<
       return flag ? calculatedValue.slice(1, 2) + key : `0${key}`;
     };
 
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-      if (e.key === "Tab") {
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+      if (event.key === "Tab") {
         return;
       }
-      e.preventDefault();
-      if (e.key === "ArrowRight") {
+      event.preventDefault();
+      if (event.key === "ArrowRight") {
         onRightFocus?.();
       }
-      if (e.key === "ArrowLeft") {
+      if (event.key === "ArrowLeft") {
         onLeftFocus?.();
       }
-      if (["ArrowUp", "ArrowDown"].includes(e.key)) {
-        const step = e.key === "ArrowUp" ? 1 : -1;
+      if (["ArrowUp", "ArrowDown"].includes(event.key)) {
+        const step = event.key === "ArrowUp" ? 1 : -1;
         const newValue = getArrowByType(calculatedValue, step, picker);
         if (flag) {
           setFlag(false);
@@ -103,12 +104,12 @@ const TimePickerInput = React.forwardRef<
         const temporaryDate = new Date(date);
         setDate(setDateByType(temporaryDate, newValue, picker, period));
       }
-      if (e.key >= "0" && e.key <= "9") {
+      if (event.key >= "0" && event.key <= "9") {
         if (picker === "12hours") {
-          setPreviousIntKey(e.key);
+          setPreviousIntKey(event.key);
         }
 
-        const newValue = calculateNewValue(e.key);
+        const newValue = calculateNewValue(event.key);
         if (flag) {
           onRightFocus?.();
         }
@@ -128,15 +129,15 @@ const TimePickerInput = React.forwardRef<
           className,
         )}
         value={value || calculatedValue}
-        onChange={(e) => {
-          e.preventDefault();
-          onChange?.(e);
+        onChange={(event) => {
+          event.preventDefault();
+          onChange?.(event);
         }}
         type={type}
         inputMode="decimal"
-        onKeyDown={(e) => {
-          onKeyDown?.(e);
-          handleKeyDown(e);
+        onKeyDown={(event) => {
+          onKeyDown?.(event);
+          handleKeyDown(event);
         }}
         {...props}
       />

@@ -39,7 +39,8 @@ export default async function Home() {
           </div>
         ) : (
           <div className="py-12 text-center text-muted-foreground">
-            No people yet. Click the "New Person" button to add someone.
+            No people yet. Click the &quot;New Person&quot; button to add
+            someone.
           </div>
         )}
       </main>

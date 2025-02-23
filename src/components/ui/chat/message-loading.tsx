@@ -1,4 +1,4 @@
-export default function MessageLoading() {
+export function MessageLoading() {
   return (
     <svg
       width="24"
