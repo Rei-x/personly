@@ -13,6 +13,9 @@ importers:
       "@auth/prisma-adapter":
         specifier: ^2.7.4
         version: 2.7.4(@prisma/client@6.4.1(prisma@6.4.1(typescript@5.7.3))(typescript@5.7.3))
+      "@bprogress/next":
+        specifier: ^3.0.6
+        version: 3.0.6(next@15.1.7(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       "@hookform/resolvers":
         specifier: ^4.1.1
         version: 4.1.1(react-hook-form@7.54.2(react@18.3.1))
@@ -541,6 +544,31 @@ packages:
         integrity: sha512-Y3IR1cRnOxOCDvMmNiym7XpXQ93iGDDPHx+Zj+NM+rg0fBaShfQLkg+hKPaZCEvg5N/LeCo4+Rj/i3FuJsIQaw==,
       }
     engines: { node: ">=6.9.0" }
+
+  "@bprogress/core@1.1.15":
+    resolution:
+      {
+        integrity: sha512-s5O7RjLwD8YXa8tUCQhm/VIc/yTifAlCiOBX2ejCM3e+HSAiEXEvYiEgslSdnSjw/wKl3myLzvO+DLHuBzO+IQ==,
+      }
+
+  "@bprogress/next@3.0.6":
+    resolution:
+      {
+        integrity: sha512-AQL35H6WSmxy7LPwtBF6sw1iX430K7BonQutZhuwXEwI7eMFRwN/YrHB0uMg8q1lUyhKbwnk2D2crPzH4RcPYw==,
+      }
+    peerDependencies:
+      next: ">=13.0.0"
+      react: ">=18.0.0"
+      react-dom: ">=18.0.0"
+
+  "@bprogress/react@1.1.1":
+    resolution:
+      {
+        integrity: sha512-1ovpqW0ZTXOZ6NdnM3MRH5wQb/47RXBN6nEVGa72O2k4Tvr5x8htuOqH1eXaAbEeVh+DtpK3Hj3xT/FA8DsjJg==,
+      }
+    peerDependencies:
+      react: ">=18.0.0"
+      react-dom: ">=18.0.0"
 
   "@clack/core@0.4.1":
     resolution:
@@ -8720,6 +8748,22 @@ snapshots:
     dependencies:
       "@babel/helper-string-parser": 7.25.9
       "@babel/helper-validator-identifier": 7.25.9
+
+  "@bprogress/core@1.1.15": {}
+
+  "@bprogress/next@3.0.6(next@15.1.7(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)":
+    dependencies:
+      "@bprogress/core": 1.1.15
+      "@bprogress/react": 1.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 15.1.7(@opentelemetry/api@1.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
+  "@bprogress/react@1.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)":
+    dependencies:
+      "@bprogress/core": 1.1.15
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
 
   "@clack/core@0.4.1":
     dependencies:

@@ -29,6 +29,7 @@
   "dependencies": {
     "@ai-sdk/openai": "^1.1.13",
     "@auth/prisma-adapter": "^2.7.4",
+    "@bprogress/next": "^3.0.6",
     "@hookform/resolvers": "^4.1.1",
     "@paralleldrive/cuid2": "^2.2.2",
     "@prisma/client": "^6.4.1",
