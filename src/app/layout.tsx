@@ -1,6 +1,7 @@
 import { GeistSans } from "geist/font/sans";
 import type { Metadata, Viewport } from "next";
 
+import { InstallPrompt } from "@/components/install-prompt";
 import "@/styles/globals.css";
 import { TRPCReactProvider } from "@/trpc/react";
 
@@ -55,6 +56,7 @@ export default function RootLayout({
     <html lang="en" className={GeistSans.variable}>
       <body className="container mx-auto">
         <TRPCReactProvider>{children}</TRPCReactProvider>
+        <InstallPrompt />
       </body>
     </html>
   );

@@ -14,10 +14,12 @@ export default function manifest(): MetadataRoute.Manifest {
     screenshots: [
       {
         src: "/screenshot.png",
+        sizes: "678x1288",
       },
       {
         src: "/screenshot-wide.png",
         form_factor: "wide",
+        sizes: "2579x1331",
       },
     ],
     icons: [
