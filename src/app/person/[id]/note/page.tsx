@@ -24,12 +24,14 @@ async function EditPerson({
     },
   });
 
-  const note = await db.event.findUnique({
-    where: {
-      id: noteId,
-      personId: id,
-    },
-  });
+  const note = noteId
+    ? await db.event.findUnique({
+        where: {
+          id: noteId,
+          personId: id,
+        },
+      })
+    : null;
 
   return (
     <div className="mx-2 mt-8 flex h-[calc(100vh-2rem)] flex-col">

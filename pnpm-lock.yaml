@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      "@ai-sdk/openai":
+        specifier: ^1.1.13
+        version: 1.1.13(zod@3.24.2)
       "@auth/prisma-adapter":
         specifier: ^2.7.4
         version: 2.7.4(@prisma/client@6.4.1(prisma@6.4.1(typescript@5.7.3))(typescript@5.7.3))
@@ -139,6 +142,9 @@ importers:
       date-fns:
         specifier: ^3.6.0
         version: 3.6.0
+      dotenv:
+        specifier: ^16.4.7
+        version: 16.4.7
       embla-carousel-react:
         specifier: ^8.5.2
         version: 8.5.2(react@18.3.1)
@@ -275,6 +281,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.17
+      tsx:
+        specifier: ^4.19.3
+        version: 4.19.3
       typescript:
         specifier: ^5.5.3
         version: 5.7.3
@@ -297,6 +306,15 @@ packages:
     engines: { node: ">=20.6.0" }
     peerDependencies:
       eslint: ^9.9.1
+
+  "@ai-sdk/openai@1.1.13":
+    resolution:
+      {
+        integrity: sha512-IdChK1pJTW3NQis02PG/hHTG0gZSyQIMOLPt7f7ES56C0xH2yaKOU1Tp2aib7pZzWGwDlzTOW2h5TtAB8+V6CQ==,
+      }
+    engines: { node: ">=18" }
+    peerDependencies:
+      zod: ^3.0.0
 
   "@ai-sdk/provider-utils@2.1.9":
     resolution:
@@ -3888,6 +3906,13 @@ packages:
         integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==,
       }
     engines: { node: ">=8" }
+
+  dotenv@16.4.7:
+    resolution:
+      {
+        integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==,
+      }
+    engines: { node: ">=12" }
 
   dunder-proto@1.0.1:
     resolution:
@@ -7754,6 +7779,14 @@ packages:
         integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==,
       }
 
+  tsx@4.19.3:
+    resolution:
+      {
+        integrity: sha512-4H8vUNGNjQ4V2EOoGw005+c+dGuPSnhpPBPHBtsZdGZBk/iJb4kguGlPWaZTZ3q5nMtFOEsY0nRDlh9PJyd6SQ==,
+      }
+    engines: { node: ">=18.0.0" }
+    hasBin: true
+
   type-check@0.4.0:
     resolution:
       {
@@ -8148,6 +8181,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
+
+  "@ai-sdk/openai@1.1.13(zod@3.24.2)":
+    dependencies:
+      "@ai-sdk/provider": 1.0.8
+      "@ai-sdk/provider-utils": 2.1.9(zod@3.24.2)
+      zod: 3.24.2
 
   "@ai-sdk/provider-utils@2.1.9(zod@3.24.2)":
     dependencies:
@@ -10604,6 +10643,8 @@ snapshots:
   dot-prop@5.3.0:
     dependencies:
       is-obj: 2.0.0
+
+  dotenv@16.4.7: {}
 
   dunder-proto@1.0.1:
     dependencies:
@@ -13364,6 +13405,13 @@ snapshots:
       strip-bom: 3.0.0
 
   tslib@2.8.1: {}
+
+  tsx@4.19.3:
+    dependencies:
+      esbuild: 0.25.0
+      get-tsconfig: 4.10.0
+    optionalDependencies:
+      fsevents: 2.3.3
 
   type-check@0.4.0:
     dependencies:

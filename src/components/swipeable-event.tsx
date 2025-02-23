@@ -94,7 +94,7 @@ export function SwipeableEvent({ event, personId }: SwipeableEventProps) {
             href={`/person/${personId}/note/${event.id}`}
             className={`block ${isDragging ? "pointer-events-none" : ""}`}
           >
-            <div className="flex w-full items-center justify-between rounded-md border bg-background p-4">
+            <div className="flex w-full flex-col justify-items-center rounded-md border bg-background p-4">
               <div className="flex items-center gap-2">
                 <FileEditIcon size={16} />
                 {event.name}

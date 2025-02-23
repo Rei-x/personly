@@ -1,4 +1,5 @@
 import { createEnv } from "@t3-oss/env-nextjs";
+import "dotenv/config";
 import { z } from "zod";
 
 export const env = createEnv({
@@ -17,6 +18,7 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    OPENAI_API_KEY: z.string().optional(),
   },
 
   /**

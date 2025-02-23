@@ -1,6 +1,8 @@
 import { personRouter } from "@/server/api/routers/person";
 import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
 
+import { aiRouter } from "./routers/ai";
+
 /**
  * This is the primary router for your server.
  *
@@ -8,6 +10,7 @@ import { createCallerFactory, createTRPCRouter } from "@/server/api/trpc";
  */
 export const appRouter = createTRPCRouter({
   person: personRouter,
+  ai: aiRouter,
 });
 
 // export type definition of API
