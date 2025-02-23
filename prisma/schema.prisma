@@ -1,5 +1,6 @@
 generator client {
-    provider = "prisma-client-js"
+    provider        = "prisma-client-js"
+    previewFeatures = ["strictUndefinedChecks"]
 }
 
 datasource db {
@@ -8,7 +9,7 @@ datasource db {
 }
 
 model Person {
-    id          Int    @id @default(autoincrement())
+    id          String @id @default(cuid(2))
     name        String
     description String @default("")
 
@@ -22,22 +23,21 @@ model Person {
 }
 
 model Event {
-    id          Int    @id @default(autoincrement())
+    id          String @id @default(cuid(2))
     name        String
     description String @default("")
 
-    personId Int
-    person   Person  @relation(fields: [personId], references: [id])
-    User     User?   @relation(fields: [userId], references: [id])
-    userId   String?
+    personId String
+    person   Person @relation(fields: [personId], references: [id])
+    user     User   @relation(fields: [userId], references: [id])
+    userId   String
 
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
 }
 
-// Necessary for Next auth
 model Account {
-    id                       String  @id @default(cuid())
+    id                       String  @id @default(cuid(2))
     userId                   String
     type                     String
     provider                 String

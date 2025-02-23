@@ -5,8 +5,8 @@ import { useRevalidator } from "react-router";
 
 import { trpc } from "@/lib/trpc";
 
-import { Avatar } from "./Avatar";
-import { Markdown } from "./Markdown";
+import { Avatar } from "./avatar";
+import { Markdown } from "./markdown";
 import { Button } from "./ui/button";
 import {
   ChatBubble,

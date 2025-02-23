@@ -11,6 +11,10 @@ import { cn } from "@/lib/utils";
 
 /* eslint-disable @typescript-eslint/no-unnecessary-condition */
 
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+
+/* eslint-disable @typescript-eslint/no-unnecessary-condition */
+
 type CarouselApi = UseEmblaCarouselType[1];
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>;
 type CarouselOptions = UseCarouselParameters[0];

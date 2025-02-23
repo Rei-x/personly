@@ -1,6 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -28,11 +29,13 @@ function NewPerson() {
       name: "",
     },
   });
+  const router = useRouter();
 
   const addPerson = api.person.add.useMutation();
 
   const onSubmit = form.handleSubmit(async (data) => {
     await addPerson.mutateAsync(data);
+    router.push("/");
     form.reset();
   });
 
@@ -53,7 +56,9 @@ function NewPerson() {
               </FormItem>
             )}
           />
-          <Button type="submit">Submit</Button>
+          <Button loading={form.formState.isSubmitting} type="submit">
+            Submit
+          </Button>
         </form>
       </Form>
     </div>

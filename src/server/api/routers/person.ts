@@ -18,4 +18,43 @@ export const personRouter = createTRPCRouter({
         },
       });
     }),
+  saveEvent: protectedProcedure
+    .input(
+      z.object({
+        id: z.string().cuid2(),
+        title: z.string(),
+        description: z.string(),
+        personId: z.string().cuid2(),
+      }),
+    )
+    .mutation(async ({ input, ctx }) => {
+      return db.event.upsert({
+        where: {
+          id: input.id,
+          userId: ctx.session.user.id,
+        },
+        update: {
+          name: input.title,
+          description: input.description,
+          personId: input.personId,
+        },
+        create: {
+          id: input.id,
+          name: input.title,
+          description: input.description,
+          personId: input.personId,
+          userId: ctx.session.user.id,
+        },
+      });
+    }),
+  deleteEvent: protectedProcedure
+    .input(z.object({ id: z.string() }))
+    .mutation(async ({ input, ctx }) => {
+      return db.event.delete({
+        where: {
+          id: input.id,
+          userId: ctx.session.user.id,
+        },
+      });
+    }),
 });
