@@ -35,3 +35,25 @@ export const generateTitle = async (note: string) => {
 
   return text;
 };
+
+export const polishNote = async (note: string) => {
+  const { text } = await generateText({
+    model: smartModel,
+    system: `You are an expert editor who helps polish and improve text while maintaining its original meaning and language.
+
+    Rules:
+    - Fix any grammar and spelling errors
+    - Improve text structure for better readability
+    - Maintain the original language of the text
+    - Keep the original meaning and key points
+    - Add paragraphs and line breaks where appropriate
+    - Do not add any editorial comments or explanations
+    - Reply only with the improved text
+    `,
+    prompt: `<note>
+      ${note}
+    </note>`,
+  });
+
+  return text;
+};

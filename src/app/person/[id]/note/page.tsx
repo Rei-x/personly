@@ -34,7 +34,7 @@ async function EditPerson({
     : null;
 
   return (
-    <div className="mx-2 mt-8 flex h-[calc(100vh-2rem)] flex-col">
+    <div className="mx-2 mt-8 flex h-[calc(var(--visual-viewport-height)-3rem)] flex-col">
       <div className="flex justify-between">
         <Button asChild variant="link" size="icon">
           <Link href={`/person/${id}`}>
