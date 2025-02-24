@@ -50,9 +50,7 @@ export const polishNote = async (note: string) => {
     - Do not add any editorial comments or explanations
     - Reply only with the improved text
     `,
-    prompt: `<note>
-      ${note}
-    </note>`,
+    prompt: note,
   });
 
   return text;
